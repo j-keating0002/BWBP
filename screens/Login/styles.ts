@@ -10,15 +10,15 @@ export const ImageContainer = styled.View`
 `;
 
 export const LoginImg = styled.Image`
-  width: ${win.height * 1.4};
-  height: null;
-  aspect-ratio: 1;
+  width: 450px;
+  height: 500px;
+  aspect-ratio: 1.02;
 `;
 
 export const LoginHeader = styled.Text`
   font-size: 40px;
   font-family: source-sans-pro-bold;
-  margin: 12.5% 0 5% 10%;
+  margin: 11.5% 0 4.5% 10%;
 `;
 
 export const LoginInput = styled.TextInput`
@@ -42,7 +42,7 @@ export const LoginButton = styled.TouchableOpacity`
 `;
 
 export const LoginButtonText = styled.Text`
-  font-size: 20;
+  font-size: 18;
 `;
 
 export const LoginText = styled.Text`
@@ -58,7 +58,7 @@ export const GuestButtonText = styled.Text`
 export const GuestButton = styled.TouchableOpacity`
   border-radius: 5;
   background-color: transparent;
-  height: 7%;
+  height: 8%;
   align-items: center;
   justify-content: center;
   margin: 0 10% 0 10%;

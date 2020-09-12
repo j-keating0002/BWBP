@@ -106,7 +106,30 @@ export class JobsScreen extends React.Component<JobsScreenProps, JobsScreenState
     console.log(newJobs, availability);
 
     // Step 1: Remove jobs where the schedule doesn't align with the users' availability.
+    const days: string[] = [];
+    for(const [day, boolean] of Object.entries(availability)) { //days of the week that are false
+      if (boolean == false) {
+        days.push(day.charAt(0).toUpperCase() + day.slice(1));
+      }
+    }
 
+    const show: JobRecord[] = [];
+
+    var counter = 0;
+    for(let i in jobs) {
+      var check = 1;
+      for(let day of days) {
+        if (jobs[i]['schedule'].includes(day)) {
+          var check = 0;
+        }
+      }
+      if (check == 0) {
+        newJobs.splice(Number(i) - counter, 1)
+        var counter = counter + 1;
+      }
+    }
+
+    
     // Step 2: Save into state
     this.setState({ jobs: newJobs });
   };
